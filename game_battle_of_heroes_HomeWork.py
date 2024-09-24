@@ -1,5 +1,5 @@
 import random
-import time
+#import time
 
 class Hero:
     def __init__(self, name, health=100, attack_power=20):
