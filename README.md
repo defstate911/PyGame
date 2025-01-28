@@ -1,4 +1,4 @@
-# lesson_PyGame
+# PyGame
  
 # Games Collection
 
