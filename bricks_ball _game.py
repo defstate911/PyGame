@@ -79,6 +79,19 @@ while running:
             ball_speed_y = -ball_speed_y  # Изменение направления мяча
             break  # Выход после уничтожения одного кирпича, чтобы не удалять несколько за один кадр
 
+    # Проверка на победу
+    if not bricks:
+        # Показ сообщения о победе
+        screen.fill(BLACK)
+        font = pygame.font.SysFont(None, 48)
+        text = font.render("Вы молодцы! Вы выиграли!", True, WHITE)
+        text_rect = text.get_rect(center=(screen_width // 2, screen_height // 2))
+        screen.blit(text, text_rect)
+        pygame.display.flip()
+        pygame.time.wait(3000)  # Задержка перед завершением игры
+        running = False
+
+
     # Столкновение с платформой
     if paddle_x <= ball_x <= paddle_x + paddle_width and paddle_y <= ball_y + ball_radius <= paddle_y + paddle_height:
         ball_speed_y = -ball_speed_y
